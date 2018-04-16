@@ -1,6 +1,5 @@
 //
 //  LocationManager.swift
-//  Property-Wars
 //
 //  Created by Sep Pourteymour on 17/04/2017.
 //  Copyright © 2017 Appocalyptis. All rights reserved.
@@ -10,22 +9,16 @@ import Foundation
 import CoreLocation
 
 @objc protocol LocationOrganiserDelegate {
-	@objc optional func locationOrganiserDidUpdateForVisibility(location:CLLocation)
-	@objc optional func locationOrganiserDidSendInternal(location:CLLocation)
 	@objc optional func locationOrganiserDidUpdateUserLocation(location:CLLocation)
 }
 
 enum DelegateType:Int {
-	case visibility = 0
 	case userUpdate = 1
-	case internalUpdate = 2
 }
 
 class LocationManager:NSObject, CLLocationManagerDelegate {
 	
 	static let instance = LocationManager()
-	internal var visibilityDelegates:NSHashTable<AnyObject>
-	internal var internalDelegates:NSHashTable<AnyObject>
 	internal var userLocationDelegates:NSHashTable<AnyObject>
 	
 	var currentLocation:CLLocation? = nil
@@ -40,23 +33,11 @@ class LocationManager:NSObject, CLLocationManagerDelegate {
 	}()
 	
 	override init() {
-		visibilityDelegates = NSHashTable.weakObjects()
-		internalDelegates = NSHashTable.weakObjects()
 		userLocationDelegates = NSHashTable.weakObjects()
 	}
 	
 	func addDelegateForType(delegate:LocationOrganiserDelegate, type:DelegateType) {
 		switch type {
-		case .visibility:
-			if !visibilityDelegates.contains(delegate) {
-				visibilityDelegates.add(delegate)
-			}
-			break
-		case .internalUpdate:
-			if !internalDelegates.contains(delegate) {
-				internalDelegates.add(delegate)
-			}
-			break
 		case .userUpdate:
 			if !userLocationDelegates.contains(delegate) {
 				userLocationDelegates.add(delegate)
@@ -67,14 +48,6 @@ class LocationManager:NSObject, CLLocationManagerDelegate {
 	
 	func removeDelegateForType(delegate:LocationOrganiserDelegate, type:DelegateType) {
 		switch type {
-		case .visibility:
-			if visibilityDelegates.contains(delegate) {
-				visibilityDelegates.remove(delegate)
-			}
-		case .internalUpdate:
-			if internalDelegates.contains(delegate) {
-				internalDelegates.remove(delegate)
-			}
 		case .userUpdate:
 			if userLocationDelegates.contains(delegate) {
 				userLocationDelegates.remove(delegate)
@@ -130,18 +103,6 @@ class LocationManager:NSObject, CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
 		
 		currentLocation = locations.last!
-		if internalDelegates.allObjects.count > 0 {
-			for delegate in internalDelegates.allObjects {
-				delegate.locationOrganiserDidSendInternal!(location: currentLocation!)
-			}
-		}
-		if isVisible {
-			if visibilityDelegates.allObjects.count > 0 {
-				for delegate in visibilityDelegates.allObjects {
-					delegate.locationOrganiserDidUpdateForVisibility!(location: currentLocation!)
-				}
-			}
-		}
 		if userLocationDelegates.allObjects.count > 0 {
 			for delegate in userLocationDelegates.allObjects {
 				delegate.locationOrganiserDidUpdateUserLocation!(location: currentLocation!)

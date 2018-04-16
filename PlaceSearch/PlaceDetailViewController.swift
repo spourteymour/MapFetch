@@ -10,26 +10,35 @@ import UIKit
 
 class PlaceDetailViewController: UIViewController {
 
-    override func viewDidLoad() {
+	var place: Place?
+
+	@IBOutlet weak var iconImageView: UIImageView!
+	@IBOutlet weak var nameLabel: UILabel!
+	@IBOutlet weak var addressTextView: UITextView!
+	
+	override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		view.backgroundColor = .white
     }
+	
+	func configure(place: Place) {
+		self.place = place
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		guard let place = place else { return }
+		if let url = URL(string: place.iconUrlString) {
+			iconImageView.kf.setImage(with: url)
+		}
+		nameLabel.text = place.name
+		self.title = place.name
+		let addressString = place.address.replacingOccurrences(of: ",", with: "\n")
+		addressTextView.text = addressString
+	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+	}
 }

@@ -34,6 +34,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>In order to be able to chat with others when the app is in background, we need to obtain your location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>In order to be able to chat with others when the app is in background, we need to obtain your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This is the location description</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

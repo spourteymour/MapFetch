@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum AppError: Error {
+	case RequestFailed, NotFound
+	case searchError(errorDescription: String)
+}

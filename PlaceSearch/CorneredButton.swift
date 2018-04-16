@@ -8,14 +8,26 @@
 
 import UIKit
 
+@IBDesignable
 class CorneredButton: UIButton {
+	@IBInspectable var radius: CGFloat = 0.0 {
+		didSet {
+			self.layer.cornerRadius = radius
+			self.layer.masksToBounds = true
+		}
+	}
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+	@IBInspectable var borderWidth: CGFloat = 0.0 {
+		didSet {
+			self.layer.borderWidth = borderWidth
+			self.layer.masksToBounds = true
+		}
+	}
+	
+	@IBInspectable var borderColor: UIColor = .clear {
+		didSet {
+			self.layer.borderColor = borderColor.cgColor
+			self.layer.masksToBounds = true
+		}
+	}
 }

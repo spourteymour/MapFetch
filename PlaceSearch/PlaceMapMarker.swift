@@ -7,7 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class PlaceMapMarker: GMSMarker {
-
+	var place: Place?
 }
