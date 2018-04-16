@@ -15,7 +15,6 @@
 		694F683F2083B21700A3B888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 694F683D2083B21700A3B888 /* LaunchScreen.storyboard */; };
 		694F68472083B27B00A3B888 /* RequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F68462083B27B00A3B888 /* RequestParameters.swift */; };
 		694F68492083B30200A3B888 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F68482083B30200A3B888 /* AppData.swift */; };
-		694F684B2083B88B00A3B888 /* PlacesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F684A2083B88B00A3B888 /* PlacesRequest.swift */; };
 		694F684D2083BBD500A3B888 /* GeneralEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F684C2083BBD500A3B888 /* GeneralEnums.swift */; };
 		694F684F2083D4C800A3B888 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694F684E2083D4C800A3B888 /* LocationManager.swift */; };
 		697456BA2083EEAC00D42FC0 /* CorneredButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697456B92083EEAC00D42FC0 /* CorneredButton.swift */; };
@@ -42,7 +41,6 @@
 		694F68402083B21700A3B888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		694F68462083B27B00A3B888 /* RequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameters.swift; sourceTree = "<group>"; };
 		694F68482083B30200A3B888 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
-		694F684A2083B88B00A3B888 /* PlacesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesRequest.swift; sourceTree = "<group>"; };
 		694F684C2083BBD500A3B888 /* GeneralEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralEnums.swift; sourceTree = "<group>"; };
 		694F684E2083D4C800A3B888 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		697456B92083EEAC00D42FC0 /* CorneredButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorneredButton.swift; sourceTree = "<group>"; };
@@ -52,7 +50,7 @@
 		697456C1208405B500D42FC0 /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
 		697456C320840AC800D42FC0 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		697456C520840D1700D42FC0 /* PlacesTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesTableCell.swift; sourceTree = "<group>"; };
-		697456CA208410DB00D42FC0 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacesTableViewController.swift; path = PlaceSearch/PlacesTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		697456CA208410DB00D42FC0 /* PlacesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlacesTableViewController.swift; path = "PlaceSearch/View Controllers/PlacesTableViewController.swift"; sourceTree = SOURCE_ROOT; };
 		697456CE2084227200D42FC0 /* PlaceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceDetailViewController.swift; sourceTree = "<group>"; };
 		697456D020842BD400D42FC0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		697456D220842F9700D42FC0 /* PlaceMapMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapMarker.swift; sourceTree = "<group>"; };
@@ -104,28 +102,14 @@
 		694F68332083B21700A3B888 /* PlaceSearch */ = {
 			isa = PBXGroup;
 			children = (
-				697456CE2084227200D42FC0 /* PlaceDetailViewController.swift */,
-				694F684E2083D4C800A3B888 /* LocationManager.swift */,
 				694F68342083B21700A3B888 /* AppDelegate.swift */,
-				694F68362083B21700A3B888 /* ViewController.swift */,
-				6978BA2D208444A800C97829 /* LocalRequest.swift */,
-				697456CA208410DB00D42FC0 /* PlacesTableViewController.swift */,
-				697456D020842BD400D42FC0 /* MapViewController.swift */,
-				697456D220842F9700D42FC0 /* PlaceMapMarker.swift */,
+				6978BA2F20844E0700C97829 /* View Controllers */,
+				6978BA3320844E9100C97829 /* Managers */,
+				6978BA3220844E8700C97829 /* Views */,
 				697456C920840D2700D42FC0 /* Cells */,
-				694F684A2083B88B00A3B888 /* PlacesRequest.swift */,
-				694F68462083B27B00A3B888 /* RequestParameters.swift */,
-				694F684C2083BBD500A3B888 /* GeneralEnums.swift */,
-				694F68482083B30200A3B888 /* AppData.swift */,
-				694F68382083B21700A3B888 /* Main.storyboard */,
-				697456BB2083F58E00D42FC0 /* Place.swift */,
-				697456C1208405B500D42FC0 /* RequestResult.swift */,
-				697456BD2084025100D42FC0 /* Geometry.swift */,
-				697456BF208403CC00D42FC0 /* Location.swift */,
-				697456B92083EEAC00D42FC0 /* CorneredButton.swift */,
-				694F683B2083B21700A3B888 /* Assets.xcassets */,
-				694F683D2083B21700A3B888 /* LaunchScreen.storyboard */,
-				694F68402083B21700A3B888 /* Info.plist */,
+				6978BA3120844E5D00C97829 /* Enums */,
+				6978BA3420844EA600C97829 /* Resources */,
+				6978BA3020844E4700C97829 /* Models */,
 			);
 			path = PlaceSearch;
 			sourceTree = "<group>";
@@ -136,6 +120,67 @@
 				697456C520840D1700D42FC0 /* PlacesTableCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6978BA2F20844E0700C97829 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				697456CE2084227200D42FC0 /* PlaceDetailViewController.swift */,
+				694F68362083B21700A3B888 /* ViewController.swift */,
+				697456CA208410DB00D42FC0 /* PlacesTableViewController.swift */,
+				697456D020842BD400D42FC0 /* MapViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		6978BA3020844E4700C97829 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				697456BB2083F58E00D42FC0 /* Place.swift */,
+				697456C1208405B500D42FC0 /* RequestResult.swift */,
+				697456BD2084025100D42FC0 /* Geometry.swift */,
+				697456BF208403CC00D42FC0 /* Location.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6978BA3120844E5D00C97829 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				694F68462083B27B00A3B888 /* RequestParameters.swift */,
+				694F684C2083BBD500A3B888 /* GeneralEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		6978BA3220844E8700C97829 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				697456D220842F9700D42FC0 /* PlaceMapMarker.swift */,
+				697456B92083EEAC00D42FC0 /* CorneredButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6978BA3320844E9100C97829 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				694F684E2083D4C800A3B888 /* LocationManager.swift */,
+				6978BA2D208444A800C97829 /* LocalRequest.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		6978BA3420844EA600C97829 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				694F68482083B30200A3B888 /* AppData.swift */,
+				694F68382083B21700A3B888 /* Main.storyboard */,
+				694F683B2083B21700A3B888 /* Assets.xcassets */,
+				694F683D2083B21700A3B888 /* LaunchScreen.storyboard */,
+				694F68402083B21700A3B888 /* Info.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		9FDDE94C31E42D191A743FF2 /* Pods */ = {
@@ -288,7 +333,6 @@
 				697456C0208403CC00D42FC0 /* Location.swift in Sources */,
 				694F684D2083BBD500A3B888 /* GeneralEnums.swift in Sources */,
 				697456C720840D1700D42FC0 /* PlacesTableCell.swift in Sources */,
-				694F684B2083B88B00A3B888 /* PlacesRequest.swift in Sources */,
 				697456CB208410DB00D42FC0 /* PlacesTableViewController.swift in Sources */,
 				694F684F2083D4C800A3B888 /* LocationManager.swift in Sources */,
 				694F68352083B21700A3B888 /* AppDelegate.swift in Sources */,
@@ -441,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CXR9TJZ6PM;
-				INFOPLIST_FILE = PlaceSearch/Info.plist;
+				INFOPLIST_FILE = PlaceSearch/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spourteymour.PlaceSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -457,7 +501,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CXR9TJZ6PM;
-				INFOPLIST_FILE = PlaceSearch/Info.plist;
+				INFOPLIST_FILE = PlaceSearch/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.spourteymour.PlaceSearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
